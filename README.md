@@ -1,13 +1,19 @@
 <div align="center">
 
-![readme splash](https://imgur.com/YRCq0WE.png)
+![readme splash](https://imgur.com/obFceQg.png)
+
+A collection of tools made for the Unity Engine that cover systems and features such as Logging, UI, Editor and Runtime Logic. This packages purpose is to assist with everyday development and to aid in cutting down the need to write repetative systems for projects.
 
 <br>
 
-## [**Installation**](#installation)
-## [**Features**](#features)
-## [**WIP**](#wip)
-## [**License**](./LICENSE.md)
+Note: All elements of this package are subject to change anytime so be sure to backup your projects before updating to new versions.
+
+<br>
+
+### [**Installation**](#installation)
+### [**Features**](#features)
+### [**WIP**](#wip)
+### [**License**](./LICENSE.md)
 
 <br>
 <br>
