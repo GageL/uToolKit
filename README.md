@@ -187,7 +187,7 @@ Contains Tweening logic for easing into a track/clip to a target volume over a s
 
 Contains logic that sets the sibling index of the object the component is attached to. Includes 3 modes to reference at runtime such as `Editor` and `Runtime` via `Awake`, `Start` and `Update`. Note, running sibling index via `Update` can affect overall performance.
 
-#### LoggerOptions.cs
+#### LogConsole.cs
 
 Contains a custom console log that automatically links to Unitys `Debug.Log` callback. Additionally, it has the ability to intake custom commands that are broadcast via an `Action` for any external class to subscribe to to then parse and run logic against. Includes a themed color pallete and font.
 
@@ -236,3 +236,4 @@ Includes extension methods for common data types such as string, float, int and 
 These tasks are the current planned features that are on the roadmap to be either completed *(in progress)* or started *(backlog)*
 
 - [ ] Simple Event Dispatcher System
+- [ ] Add new Log Console themes
