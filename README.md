@@ -32,7 +32,7 @@ Note: All elements of this package are subject to change anytime so be sure to b
 
 #### API Compatability Level
 
-If using the `Player Prefs Manager` the `API Compatability Level` in the `Project Settings` must be set to `.NET 4.X` and does not support `.NET Standard 2.0`
+The `API Compatability Level` in the `Project Settings` must be set to `.NET 4.X`. This package includes libraries that do not support `.NET Standard 2.0`
 
 #### DOTween (HOTween v2)
 
