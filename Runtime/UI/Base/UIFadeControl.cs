@@ -48,10 +48,12 @@ namespace uToolKit.Runtime {
 		#endregion
 
 		#region Native Methods
+#if UNITY_EDITOR
 		protected override void OnValidate() {
 			base.OnValidate();
 			TryGetRef();
 		}
+#endif
 
 		protected override void Awake() {
 			base.Awake();
