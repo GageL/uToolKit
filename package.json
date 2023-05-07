@@ -1,6 +1,6 @@
 {
     "name": "com.gagel.utoolkit",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "displayName": "uToolKit",
     "description": "A collection of tools made for the Unity Engine that cover systems and features such as Logging, UI, Editor and Runtime Logic. This packages purporse it so assist with everyday development and to aid in cutting down the need to write repetative systems for projects.\n\nNote, all elements of this package are subject to change anytime so be sure to backup your projects before updating to new versions.",
     "unity": "2019.1",

@@ -55,7 +55,7 @@ namespace uToolKit.Runtime {
 			CloseMenu();
 			ClearLogger();
 			if (FindObjectOfType<EventSystem>() == null) {
-				Instantiate(Resources.Load("LegacyEventSystem")).name = "LegacyEventSystem";
+				Debug.LogWarning("No EventSystem found in scene.");
 			}
 		}
 
