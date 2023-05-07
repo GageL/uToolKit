@@ -55,7 +55,7 @@ namespace uToolKit.Runtime {
 			CloseMenu();
 			ClearLogger();
 			if (FindObjectOfType<EventSystem>() == null) {
-				Debug.LogWarning("No EventSystem found in scene.");
+				UnityEngine.Debug.LogWarning("No EventSystem found in scene.");
 			}
 		}
 
