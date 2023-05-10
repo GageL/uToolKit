@@ -1,5 +1,5 @@
 {
-    "name": "LucasIndustries.Toolbag.Editor",
+    "name": "uToolkit.Editor",
     "rootNamespace": "",
     "references": [
         "LucasIndustries.Toolbag.Runtime"

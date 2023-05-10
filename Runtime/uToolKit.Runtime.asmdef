@@ -1,5 +1,5 @@
 {
-    "name": "LucasIndustries.Toolbag.Runtime",
+    "name": "uToolKit.Runtime",
     "rootNamespace": "",
     "references": [
         "Unity.TextMeshPro",
