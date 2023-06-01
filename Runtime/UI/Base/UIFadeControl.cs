@@ -82,10 +82,14 @@ namespace uToolKit.Runtime {
 			isControlShown = show;
 			SetValues(show);
 			if (show) {
+				OnShowStart();
 				OnShowStarted?.Invoke();
+				OnShowComplete();
 				OnShowCompleted?.Invoke();
 			} else {
+				OnHideStart();
 				OnHideStarted?.Invoke();
+				OnHideComplete();
 				OnHideCompleted?.Invoke();
 			}
 		}
