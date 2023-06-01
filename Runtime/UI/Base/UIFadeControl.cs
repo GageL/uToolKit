@@ -54,9 +54,9 @@ namespace uToolKit.Runtime {
 			TryGetRef();
 		}
 #endif
-
-		protected override void Awake() {
-			base.Awake();
+		
+		protected override void Start() {
+			base.Start();
 			if (canvasGroup == null) { return; }
 			InstantControl(startShown);
 		}
