@@ -78,6 +78,7 @@ namespace uToolKit.Runtime {
 		public void InstantControl(bool show) {
 			Log($"{this.GetType().Name} | InstantControl | {this.gameObject.name} | show: {show}");
 			if (canvasGroup == null) { return; }
+			canvasGroup.DOKill();
 			canvasGroup.alpha = show ? 1 : 0;
 			isControlShown = show;
 			SetValues(show);
@@ -101,6 +102,7 @@ namespace uToolKit.Runtime {
 		public void Show(Action OnStart = null, Action OnComplete = null) {
 			Log($"{this.GetType().Name} | Show | {this.gameObject.name}");
 			if (canvasGroup == null) { return; }
+			canvasGroup.DOKill();
 			canvasGroup.DOFade(1, fadeInDuration).SetEase(fadeInEase).OnStart(() => { OnShowStart(); SetValues(true); OnStart?.Invoke(); OnShowStarted?.Invoke(); Log($"{this.GetType().Name} | Show | OnStart"); }).OnComplete(() => { OnShowComplete(); isControlShown = true; OnComplete?.Invoke(); OnShowCompleted?.Invoke(); Log($"{this.GetType().Name} | Show | OnComplete"); });
 		}
 		[HideInEditorMode]
@@ -110,6 +112,7 @@ namespace uToolKit.Runtime {
 		public void ShowSilent() {
 			Log($"{this.GetType().Name} | ShowSilent | {this.gameObject.name}");
 			if (canvasGroup == null) { return; }
+			canvasGroup.DOKill();
 			canvasGroup.DOFade(1, fadeInDuration).SetEase(fadeInEase).OnStart(() => { OnShowStart(); SetValues(true); OnShowStarted?.Invoke(); Log($"{this.GetType().Name} | ShowSilent | OnStart"); }).OnComplete(() => { OnShowComplete(); isControlShown = true; OnShowCompleted?.Invoke(); Log($"{this.GetType().Name} | ShowSilent | OnComplete"); });
 		}
 		protected virtual void OnShowStart() { }
@@ -122,6 +125,7 @@ namespace uToolKit.Runtime {
 		public void Hide(Action OnStart = null, Action OnComplete = null) {
 			Log($"{this.GetType().Name} | Hide | {this.gameObject.name}");
 			if (canvasGroup == null) { return; }
+			canvasGroup.DOKill();
 			canvasGroup.DOFade(0, fadeOutDuration).SetEase(fadeOutEase).OnStart(() => { OnHideStart(); OnStart?.Invoke(); OnHideStarted?.Invoke(); Log($"{this.GetType().Name} | Hide | OnStart"); }).OnComplete(() => { OnHideComplete(); SetValues(false); isControlShown = false; OnComplete?.Invoke(); OnHideCompleted?.Invoke(); Log($"{this.GetType().Name} | Hide | OnComplete"); });
 		}
 		[HideInEditorMode]
@@ -131,6 +135,7 @@ namespace uToolKit.Runtime {
 		public void HideSilent() {
 			Log($"{this.GetType().Name} | HideSilent | {this.gameObject.name}");
 			if (canvasGroup == null) { return; }
+			canvasGroup.DOKill();
 			canvasGroup.DOFade(0, fadeOutDuration).SetEase(fadeOutEase).OnStart(() => { OnHideStart(); OnHideStarted?.Invoke(); Log($"{this.GetType().Name} | HideSilent | OnStart"); }).OnComplete(() => { OnHideComplete(); SetValues(false); isControlShown = false; OnHideCompleted?.Invoke(); Log($"{this.GetType().Name} | HideSilent | OnComplete"); });
 		}
 		protected virtual void OnHideStart() { }
