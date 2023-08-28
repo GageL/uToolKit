@@ -26,11 +26,11 @@ namespace uToolKit.Runtime {
 		[FoldoutGroup("UIFadeControl")]
 		[SerializeField] private bool startShown = false;
 		[FoldoutGroup("UIFadeControl")]
-		[SerializeField] private float fadeInDuration = 0.5f;
+		[SerializeField] private float fadeInDuration = 0.15f;
 		[FoldoutGroup("UIFadeControl")]
 		[SerializeField] private Ease fadeInEase = Ease.InOutQuad;
 		[FoldoutGroup("UIFadeControl")]
-		[SerializeField] private float fadeOutDuration = 0.5f;
+		[SerializeField] private float fadeOutDuration = 0.15f;
 		[FoldoutGroup("UIFadeControl")]
 		[SerializeField] private Ease fadeOutEase = Ease.InOutQuad;
 		[FoldoutGroup("UIFadeControl")]
@@ -101,7 +101,7 @@ namespace uToolKit.Runtime {
 		public void Show(Action OnStart = null, Action OnComplete = null) {
 			Log($"{this.GetType().Name} | Show | {this.gameObject.name}");
 			if (canvasGroup == null) { return; }
-			canvasGroup.DOFade(1, fadeInDuration).SetEase(fadeInEase).OnStart(() => { OnShowStart(); OnStart?.Invoke(); OnShowStarted?.Invoke(); Log($"{this.GetType().Name} | Show | OnStart"); }).OnComplete(() => { OnShowComplete(); SetValues(true); isControlShown = true; OnComplete?.Invoke(); OnShowCompleted?.Invoke(); Log($"{this.GetType().Name} | Show | OnComplete"); });
+			canvasGroup.DOFade(1, fadeInDuration).SetEase(fadeInEase).OnStart(() => { OnShowStart(); SetValues(true); OnStart?.Invoke(); OnShowStarted?.Invoke(); Log($"{this.GetType().Name} | Show | OnStart"); }).OnComplete(() => { OnShowComplete(); isControlShown = true; OnComplete?.Invoke(); OnShowCompleted?.Invoke(); Log($"{this.GetType().Name} | Show | OnComplete"); });
 		}
 		[HideInEditorMode]
 		[GUIColor(.82f, .40f, .34f)]
@@ -110,7 +110,7 @@ namespace uToolKit.Runtime {
 		public void ShowSilent() {
 			Log($"{this.GetType().Name} | ShowSilent | {this.gameObject.name}");
 			if (canvasGroup == null) { return; }
-			canvasGroup.DOFade(1, fadeInDuration).SetEase(fadeInEase).OnStart(() => { OnShowStart(); OnShowStarted?.Invoke(); Log($"{this.GetType().Name} | ShowSilent | OnStart"); }).OnComplete(() => { OnShowComplete(); SetValues(true); isControlShown = true; OnShowCompleted?.Invoke(); Log($"{this.GetType().Name} | ShowSilent | OnComplete"); });
+			canvasGroup.DOFade(1, fadeInDuration).SetEase(fadeInEase).OnStart(() => { OnShowStart(); SetValues(true); OnShowStarted?.Invoke(); Log($"{this.GetType().Name} | ShowSilent | OnStart"); }).OnComplete(() => { OnShowComplete(); isControlShown = true; OnShowCompleted?.Invoke(); Log($"{this.GetType().Name} | ShowSilent | OnComplete"); });
 		}
 		protected virtual void OnShowStart() { }
 		protected virtual void OnShowComplete() { }
@@ -122,7 +122,7 @@ namespace uToolKit.Runtime {
 		public void Hide(Action OnStart = null, Action OnComplete = null) {
 			Log($"{this.GetType().Name} | Hide | {this.gameObject.name}");
 			if (canvasGroup == null) { return; }
-			canvasGroup.DOFade(0, fadeOutDuration).SetEase(fadeOutEase).OnStart(() => { OnHideStart(); SetValues(false); OnStart?.Invoke(); OnHideStarted?.Invoke(); Log($"{this.GetType().Name} | Hide | OnStart"); }).OnComplete(() => { OnHideComplete(); isControlShown = false; OnComplete?.Invoke(); OnHideCompleted?.Invoke(); Log($"{this.GetType().Name} | Hide | OnComplete"); });
+			canvasGroup.DOFade(0, fadeOutDuration).SetEase(fadeOutEase).OnStart(() => { OnHideStart(); OnStart?.Invoke(); OnHideStarted?.Invoke(); Log($"{this.GetType().Name} | Hide | OnStart"); }).OnComplete(() => { OnHideComplete(); SetValues(false); isControlShown = false; OnComplete?.Invoke(); OnHideCompleted?.Invoke(); Log($"{this.GetType().Name} | Hide | OnComplete"); });
 		}
 		[HideInEditorMode]
 		[GUIColor(.82f, .40f, .34f)]
@@ -131,7 +131,7 @@ namespace uToolKit.Runtime {
 		public void HideSilent() {
 			Log($"{this.GetType().Name} | HideSilent | {this.gameObject.name}");
 			if (canvasGroup == null) { return; }
-			canvasGroup.DOFade(0, fadeOutDuration).SetEase(fadeOutEase).OnStart(() => { OnHideStart(); SetValues(false); OnHideStarted?.Invoke(); Log($"{this.GetType().Name} | HideSilent | OnStart"); }).OnComplete(() => { OnHideComplete(); isControlShown = false; OnHideCompleted?.Invoke(); Log($"{this.GetType().Name} | HideSilent | OnComplete"); });
+			canvasGroup.DOFade(0, fadeOutDuration).SetEase(fadeOutEase).OnStart(() => { OnHideStart(); OnHideStarted?.Invoke(); Log($"{this.GetType().Name} | HideSilent | OnStart"); }).OnComplete(() => { OnHideComplete(); SetValues(false); isControlShown = false; OnHideCompleted?.Invoke(); Log($"{this.GetType().Name} | HideSilent | OnComplete"); });
 		}
 		protected virtual void OnHideStart() { }
 		protected virtual void OnHideComplete() { }
